@@ -21,22 +21,16 @@ e composição.
 
 A organização geral do projeto está dividida em módulos:
 
--   `main.py`: ponto de entrada e inicialização do jogo.
--   `backend/modelos/`: modelos das entidades do jogo, como jogador e
-    NPCs.
--   `backend/desafios/`: classes responsáveis pelas perguntas e pelos
-    desafios.
--   `backend/nucleo/`: controlador principal e funções centrais do jogo.
--   `backend/sistemas/`: sistemas de sessão/progresso e banco de perguntas.
--   `backend/persistencia/`: gerenciamento do arquivo de salvamento.
--   `backend/mundo/`: representação e configuração das eras históricas.
--   `backend/dados/`: configuração das eras históricas em JSON.
--   `banco_de_dados/`: banco SQLite, arquivo JSON de perguntas e esquema SQL.
--   `frontend/`: renderização das telas, mapas, personagens, botões e demais elementos visuais.
--   `frontend/assets/`: imagens, mapas, fontes e demais recursos visuais.
+- `main.py`: ponto de entrada e inicialização do jogo.
+- `Models/`: modelos das entidades do jogo (como jogador e NPCs), classes de desafios, representação do mundo, configuração das eras e gerenciamento de persistência/salvamento.
+- `Controllers/`: controlador principal e funções centrais do jogo.
+- `Services/`: sistemas de sessão/progresso e banco de perguntas.
+- `Views/`: renderização das telas, mapas, personagens, botões e demais elementos visuais.
+- `Views/assets/`: imagens, mapas, fontes e demais recursos visuais.
+- `Data/`: banco SQLite, arquivo JSON de perguntas e esquema SQL.
+- `Tests/`: testes do sistema.
 
-Os caminhos de recursos, do banco de dados e do salvamento são centralizados em
-`backend/nucleo/caminhos.py`.
+Os caminhos de recursos, do banco de dados e do salvamento são centralizados em `Controllers/caminhos.py`.
 
 ## 3. Como Executar
 
