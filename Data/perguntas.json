@@ -1,0 +1,541 @@
+{
+  "grecia": [
+    {
+      "id": "gr01",
+      "npc_nome": "Geômetra da praça",
+      "enigma": "Um pátio retangular mede 12 unidades de comprimento e 7 de largura. Qual é sua área? Responda apenas com o número.",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 84,
+      "explicacao": "A área de um retângulo é comprimento × largura: 12 × 7 = 84 unidades quadradas.",
+      "pontos": 100
+    },
+    {
+      "id": "gr02",
+      "npc_nome": "Médica de Atenas",
+      "enigma": "Um relato afirma que uma febre surgiu após um eclipse. Isso não prova que o eclipse causou a doença. Cite dois procedimentos úteis para testar a hipótese: comparar grupos e registrar observações.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "comparar",
+          "comparacao",
+          "grupos de controle",
+          "grupo de controle"
+        ],
+        [
+          "observacao",
+          "dados",
+          "registro",
+          "evidencia"
+        ]
+      ],
+      "explicacao": "Comparações e registros sistemáticos ajudam a testar hipóteses. Uma coincidência temporal, sozinha, não demonstra causalidade.",
+      "pontos": 110
+    },
+    {
+      "id": "gr03",
+      "npc_nome": "Artesão",
+      "enigma": "Uma coluna tem 4 m de altura e sua maquete foi construída na escala 1:20. Qual é a altura da maquete em centímetros?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 20,
+      "explicacao": "4 m correspondem a 400 cm; 400 ÷ 20 = 20 cm.",
+      "pontos": 100
+    },
+    {
+      "id": "gr04",
+      "npc_nome": "Mercadora",
+      "enigma": "Um comerciante vende 3 ânforas por 18 dracmas. Mantendo o mesmo preço por unidade, quanto custam 5 ânforas?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 30,
+      "explicacao": "Cada ânfora custa 18 ÷ 3 = 6 dracmas; cinco custam 5 × 6 = 30.",
+      "pontos": 100
+    },
+    {
+      "id": "gr05",
+      "npc_nome": "Aprendiz de filósofo",
+      "enigma": "Qual é a atitude mais adequada diante de uma afirmação sem evidências: aceitá-la imediatamente ou questionar e buscar argumentos? Responda incluindo a palavra questionar ou investigar.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "questionar",
+          "investigar",
+          "buscar argumentos",
+          "evidencias"
+        ]
+      ],
+      "explicacao": "A investigação crítica procura razões e evidências antes de aceitar uma afirmação.",
+      "pontos": 100
+    },
+    {
+      "id": "gr06",
+      "npc_nome": "Construtora",
+      "enigma": "Um piso quadrado possui lados de 9 unidades. Qual é seu perímetro?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 36,
+      "explicacao": "O perímetro do quadrado é 4 × lado: 4 × 9 = 36.",
+      "pontos": 100
+    },
+    {
+      "id": "gr07",
+      "npc_nome": "Estudioso da natureza",
+      "enigma": "Por que repetir uma medição pode melhorar a confiança em um resultado? Inclua as ideias de erro ou consistência.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "repetir",
+          "repeticao",
+          "varias medidas",
+          "medicoes repetidas"
+        ],
+        [
+          "erro",
+          "consistencia",
+          "comparar",
+          "variacao"
+        ]
+      ],
+      "explicacao": "Repetições permitem comparar resultados, identificar variações e reduzir a influência de erros ocasionais.",
+      "pontos": 110
+    },
+    {
+      "id": "gr08",
+      "npc_nome": "Navegador",
+      "enigma": "Uma embarcação percorre 24 km em 3 horas. Qual foi sua velocidade média em km/h?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 8,
+      "explicacao": "Velocidade média = distância ÷ tempo = 24 ÷ 3 = 8 km/h.",
+      "pontos": 100
+    },
+    {
+      "id": "gr09",
+      "npc_nome": "Escriba",
+      "enigma": "Uma biblioteca possui 120 rolos, dos quais 30 tratam de astronomia. Qual porcentagem dos rolos trata desse tema?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 25,
+      "explicacao": "30 ÷ 120 × 100 = 25%.",
+      "pontos": 100
+    },
+    {
+      "id": "gr10",
+      "npc_nome": "Cidadã ateniense",
+      "enigma": "A participação política na Atenas antiga era igual para todos os habitantes? Responda incluindo a ideia de exclusão ou desigualdade.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "nao",
+          "não"
+        ],
+        [
+          "exclusao",
+          "exclusão",
+          "desigualdade",
+          "mulheres",
+          "escravizadas",
+          "estrangeiros"
+        ]
+      ],
+      "explicacao": "A cidadania política ateniense era restrita, excluindo mulheres, pessoas escravizadas e estrangeiros.",
+      "pontos": 110
+    }
+  ],
+  "medieval": [
+    {
+      "id": "md01",
+      "npc_nome": "Monja copista",
+      "enigma": "Uma enfermaria registra 18 pessoas doentes entre 60 moradores. Qual porcentagem dos moradores está doente?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 30,
+      "explicacao": "18 ÷ 60 × 100 = 30%.",
+      "pontos": 100
+    },
+    {
+      "id": "md02",
+      "npc_nome": "Mercador da vila",
+      "enigma": "Dois bairros têm quantidades diferentes de doentes, mas um tem o dobro da população. Qual medida permite comparar melhor o risco: contagem absoluta ou proporção por população? Explique incluindo proporção ou taxa.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "proporcao",
+          "taxa",
+          "percentual",
+          "porcentagem"
+        ]
+      ],
+      "explicacao": "A proporção em relação ao total da população permite comparar grupos de tamanhos diferentes.",
+      "pontos": 110
+    },
+    {
+      "id": "md03",
+      "npc_nome": "Cuidadora da enfermaria",
+      "enigma": "Uma vila separa 48 litros de água igualmente entre 6 equipes. Quantos litros cada equipe recebe?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 8,
+      "explicacao": "48 ÷ 6 = 8 litros para cada equipe.",
+      "pontos": 100
+    },
+    {
+      "id": "md04",
+      "npc_nome": "Aprendiz de boticário",
+      "enigma": "Uma hipótese sobre uma doença deve ser aceita apenas porque muitas pessoas repetem a mesma história? Responda incluindo evidência ou investigação.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "nao",
+          "não"
+        ],
+        [
+          "evidencia",
+          "investigar",
+          "investigacao",
+          "dados",
+          "observacao"
+        ]
+      ],
+      "explicacao": "A repetição de um rumor não o transforma em evidência; é preciso investigar e confrontar explicações com observações.",
+      "pontos": 110
+    },
+    {
+      "id": "md05",
+      "npc_nome": "Agricultora",
+      "enigma": "Uma colheita de 200 sacas perdeu 15% por causa do mau tempo. Quantas sacas foram perdidas?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 30,
+      "explicacao": "15% de 200 = 0,15 × 200 = 30 sacas.",
+      "pontos": 100
+    },
+    {
+      "id": "md06",
+      "npc_nome": "Escrivão",
+      "enigma": "Um mensageiro percorre 36 km em 4 horas. Qual é sua velocidade média em km/h?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 9,
+      "explicacao": "36 ÷ 4 = 9 km/h.",
+      "pontos": 100
+    },
+    {
+      "id": "md07",
+      "npc_nome": "Artesã",
+      "enigma": "Por que registros de casos ao longo de vários dias podem ser mais úteis que um único relato? Inclua comparação ou tendência.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "varios dias",
+          "ao longo",
+          "repetidos",
+          "serie de dados",
+          "registros"
+        ],
+        [
+          "comparacao",
+          "comparar",
+          "tendencia",
+          "mudanca"
+        ]
+      ],
+      "explicacao": "Uma série de registros permite comparar períodos e perceber tendências que um caso isolado não revela.",
+      "pontos": 110
+    },
+    {
+      "id": "md08",
+      "npc_nome": "Feirante",
+      "enigma": "Um tecido de 5 metros custa 40 moedas. Mantido o preço por metro, quanto custam 8 metros?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 64,
+      "explicacao": "40 ÷ 5 = 8 moedas por metro; 8 × 8 = 64 moedas.",
+      "pontos": 100
+    },
+    {
+      "id": "md09",
+      "npc_nome": "Morador da vila",
+      "enigma": "Uma medida de prevenção deve ser avaliada observando resultados e comparando dados antes e depois? Responda incluindo comparar ou dados.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "comparar",
+          "comparacao",
+          "dados",
+          "antes e depois",
+          "resultados"
+        ]
+      ],
+      "explicacao": "Comparar registros antes e depois ajuda a avaliar mudanças, embora outros fatores também precisem ser considerados.",
+      "pontos": 100
+    },
+    {
+      "id": "md10",
+      "npc_nome": "Mestre construtor",
+      "enigma": "Uma muralha tem 45 metros e foi dividida em 9 trechos iguais. Qual é o comprimento de cada trecho?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 5,
+      "explicacao": "45 ÷ 9 = 5 metros.",
+      "pontos": 100
+    }
+  ],
+  "moderna": [
+    {
+      "id": "mo01",
+      "npc_nome": "Astrônomo",
+      "enigma": "Um navio percorre 150 km em 5 horas, mantendo velocidade média constante. Qual é a velocidade média em km/h?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 30,
+      "explicacao": "Velocidade média = distância ÷ tempo = 150 ÷ 5 = 30 km/h.",
+      "pontos": 100
+    },
+    {
+      "id": "mo02",
+      "npc_nome": "Navegadora",
+      "enigma": "Por que observar repetidamente a posição de uma estrela pode ajudar na navegação? Inclua medida e erro ou referência.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "repetir",
+          "repetidas",
+          "varias observacoes",
+          "repeticao"
+        ],
+        [
+          "erro",
+          "medida",
+          "referencia",
+          "comparar"
+        ]
+      ],
+      "explicacao": "Observações repetidas e referências reduzem o impacto de erros e ajudam a verificar a consistência.",
+      "pontos": 110
+    },
+    {
+      "id": "mo03",
+      "npc_nome": "Cartógrafo",
+      "enigma": "Em um mapa de escala 1:100.000, uma distância mede 3 cm. Quantos quilômetros ela representa na realidade?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 3,
+      "explicacao": "3 cm no mapa representam 300.000 cm, ou 3 km.",
+      "pontos": 100
+    },
+    {
+      "id": "mo04",
+      "npc_nome": "Comerciante do porto",
+      "enigma": "Uma carga de 80 caixas é dividida igualmente em 5 carroças. Quantas caixas vão em cada carroça?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 16,
+      "explicacao": "80 ÷ 5 = 16 caixas por carroça.",
+      "pontos": 100
+    },
+    {
+      "id": "mo05",
+      "npc_nome": "Observadora do céu",
+      "enigma": "Um instrumento científico deve ser calibrado antes das medições. Explique usando a ideia de referência ou erro.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "referencia",
+          "padrao",
+          "ajuste",
+          "calibracao"
+        ],
+        [
+          "erro",
+          "medida",
+          "precisao",
+          "confiavel"
+        ]
+      ],
+      "explicacao": "A calibração compara o instrumento com uma referência, ajudando a identificar e reduzir erros sistemáticos.",
+      "pontos": 110
+    },
+    {
+      "id": "mo06",
+      "npc_nome": "Construtor de instrumentos",
+      "enigma": "Uma roda completa 12 voltas em 3 minutos. Quantas voltas realiza por minuto?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 4,
+      "explicacao": "12 ÷ 3 = 4 voltas por minuto.",
+      "pontos": 100
+    },
+    {
+      "id": "mo07",
+      "npc_nome": "Piloto",
+      "enigma": "Um navio percorre 90 km em 3 horas e depois 60 km em 2 horas. Qual foi a distância total percorrida?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 150,
+      "explicacao": "90 + 60 = 150 km.",
+      "pontos": 100
+    },
+    {
+      "id": "mo08",
+      "npc_nome": "Estudioso",
+      "enigma": "Uma única observação é suficiente para confirmar definitivamente uma hipótese científica? Responda incluindo repetição ou evidência.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "nao",
+          "não"
+        ],
+        [
+          "repeticao",
+          "repetir",
+          "evidencia",
+          "observacoes",
+          "testes"
+        ]
+      ],
+      "explicacao": "Uma hipótese precisa ser confrontada com evidências e, em geral, testada por observações ou experimentos repetidos.",
+      "pontos": 110
+    },
+    {
+      "id": "mo09",
+      "npc_nome": "Vendedora",
+      "enigma": "Um instrumento custa 50 moedas e recebe desconto de 10%. Qual é o preço final?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 45,
+      "explicacao": "10% de 50 = 5; 50 − 5 = 45 moedas.",
+      "pontos": 100
+    },
+    {
+      "id": "mo10",
+      "npc_nome": "Navegador aprendiz",
+      "enigma": "Uma embarcação percorreu 42 km em 6 horas. Qual sua velocidade média?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 7,
+      "explicacao": "42 ÷ 6 = 7 km/h.",
+      "pontos": 100
+    }
+  ],
+  "contemporanea": [
+    {
+      "id": "co01",
+      "npc_nome": "Engenheira sanitária",
+      "enigma": "Uma cidade reduz casos de uma doença de 200 para 150 após melhorar o saneamento. Qual é a redução percentual em relação ao número inicial?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 25,
+      "explicacao": "Redução = (200 − 150) ÷ 200 × 100 = 25%.",
+      "pontos": 100
+    },
+    {
+      "id": "co02",
+      "npc_nome": "Estatístico municipal",
+      "enigma": "Duas variáveis aumentam ao mesmo tempo. Isso, por si só, prova que uma causou a outra? Responda incluindo correlação e causalidade.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "nao",
+          "não"
+        ],
+        [
+          "correlacao",
+          "correlação"
+        ],
+        [
+          "causalidade",
+          "causa",
+          "causar"
+        ]
+      ],
+      "explicacao": "Correlação é associação; causalidade exige evidências adicionais e análise de possíveis fatores de confusão.",
+      "pontos": 110
+    },
+    {
+      "id": "co03",
+      "npc_nome": "Operária da fábrica",
+      "enigma": "Uma fábrica produz 240 peças em 8 horas. Mantendo o ritmo, quantas peças produz em uma hora?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 30,
+      "explicacao": "240 ÷ 8 = 30 peças por hora.",
+      "pontos": 100
+    },
+    {
+      "id": "co04",
+      "npc_nome": "Pesquisador",
+      "enigma": "Uma cidade mede a qualidade do ar em vários bairros e horários. Por que isso é melhor do que medir uma única vez em um único local? Inclua variação ou comparação.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "varios",
+          "diferentes horarios",
+          "bairros",
+          "repetir",
+          "repetidas"
+        ],
+        [
+          "comparar",
+          "variacao",
+          "representativo",
+          "mudanca"
+        ]
+      ],
+      "explicacao": "Medições em diferentes locais e horários permitem comparar variações e produzir uma visão mais representativa.",
+      "pontos": 110
+    },
+    {
+      "id": "co05",
+      "npc_nome": "Engenheiro ferroviário",
+      "enigma": "Um trem percorre 180 km em 3 horas. Qual é sua velocidade média?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 60,
+      "explicacao": "180 ÷ 3 = 60 km/h.",
+      "pontos": 100
+    },
+    {
+      "id": "co06",
+      "npc_nome": "Médica",
+      "enigma": "Uma campanha vacinou 750 pessoas de um grupo de 1.000. Qual porcentagem do grupo foi vacinada?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 75,
+      "explicacao": "750 ÷ 1.000 × 100 = 75%.",
+      "pontos": 100
+    },
+    {
+      "id": "co07",
+      "npc_nome": "Urbanista",
+      "enigma": "Ao comparar acidentes entre duas cidades de tamanhos diferentes, é melhor olhar apenas o total ou uma taxa relativa à população? Inclua taxa ou proporção.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "taxa",
+          "proporcao",
+          "por habitante",
+          "relativa"
+        ]
+      ],
+      "explicacao": "Uma taxa relativa à população permite comparações mais justas entre cidades de tamanhos diferentes.",
+      "pontos": 110
+    },
+    {
+      "id": "co08",
+      "npc_nome": "Técnica de laboratório",
+      "enigma": "Um sensor indica 22, 23 e 24 unidades em três medições. Qual é a média desses valores?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 23,
+      "explicacao": "(22 + 23 + 24) ÷ 3 = 23.",
+      "pontos": 100
+    },
+    {
+      "id": "co09",
+      "npc_nome": "Jornalista",
+      "enigma": "Uma notícia apresenta um gráfico sem indicar a fonte dos dados. Qual atitude é mais adequada? Responda incluindo verificar ou fonte.",
+      "tipo_validacao": "texto",
+      "criterios_resposta": [
+        [
+          "verificar",
+          "consultar",
+          "procurar"
+        ],
+        [
+          "fonte",
+          "origem",
+          "dados"
+        ]
+      ],
+      "explicacao": "Verificar a fonte e a origem dos dados é essencial para avaliar a confiabilidade de uma informação.",
+      "pontos": 100
+    },
+    {
+      "id": "co10",
+      "npc_nome": "Técnico de energia",
+      "enigma": "Uma comunidade reduz o consumo mensal de 500 kWh para 425 kWh. Quantos kWh foram economizados?",
+      "tipo_validacao": "numero",
+      "resposta_numerica": 75,
+      "explicacao": "500 − 425 = 75 kWh economizados.",
+      "pontos": 100
+    }
+  ]
+}

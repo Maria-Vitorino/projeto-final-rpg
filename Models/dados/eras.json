@@ -1,0 +1,110 @@
+[
+  {
+    "key": "grecia",
+    "name": "Grécia Antiga",
+    "period": "c. 500–323 a.C.",
+    "introduction": "Atenas e outras cidades gregas são centros de intensa vida pública. Nas praças, artesãos negociam, cidadãos discutem decisões coletivas e estudiosos observam a natureza. A filosofia procura explicar o mundo por meio de perguntas e argumentos; a matemática ganha aplicações na arquitetura, na geometria e na navegação. Ao mesmo tempo, a cidadania era limitada: mulheres, pessoas escravizadas e estrangeiros não participavam igualmente das decisões políticas.\n\nNesta etapa, você chega a uma cidade movimentada e encontra pessoas que representam diferentes atividades da época. Escute seus relatos, compare informações e use raciocínio matemático e científico para ajudá-las.",
+    "objective": "Conclua três encontros, reconheça a importância da investigação e avance para a próxima etapa da jornada.",
+    "map_file": "grecia.png",
+    "intro_file": "intro_grecia.jpg",
+    "spawn": [
+      640,
+      650
+    ],
+    "npc_positions": [
+      [
+        445,
+        275
+      ],
+      [
+        775,
+        325
+      ],
+      [
+        1015,
+        435
+      ]
+    ]
+  },
+  {
+    "key": "medieval",
+    "name": "Idade Média",
+    "period": "séculos V–XV (cenário: 1348)",
+    "introduction": "A sociedade medieval é marcada por comunidades rurais, cidades muradas, comércio, atividades religiosas e diferentes relações de poder. Em 1348, a peste bubônica se espalha por diversas regiões da Europa, provocando medo, perdas e mudanças profundas na vida cotidiana. As pessoas ainda não conhecem a explicação microbiológica da doença, por isso circulam hipóteses, crenças e informações contraditórias.\n\nVocê chega a uma vila que precisa organizar seus recursos e interpretar relatos com cuidado. A missão é observar dados, comparar proporções e distinguir uma coincidência de uma evidência — sem julgar o passado com conhecimentos que ainda não estavam disponíveis naquela época.",
+    "objective": "Converse com três habitantes, interprete informações e resolva desafios sobre proporções, saúde coletiva e evidências.",
+    "map_file": "medieval.png",
+    "intro_file": "intro_medieval.jpg",
+    "spawn": [
+      650,
+      665
+    ],
+    "npc_positions": [
+      [
+        270,
+        575
+      ],
+      [
+        500,
+        510
+      ],
+      [
+        930,
+        565
+      ]
+    ]
+  },
+  {
+    "key": "moderna",
+    "name": "Idade Moderna",
+    "period": "séculos XV–XVIII (cenário: 1609)",
+    "introduction": "A Idade Moderna reúne transformações nas navegações, no comércio, na ciência, na política e na produção cultural. A circulação de pessoas e conhecimentos amplia o contato entre diferentes regiões, enquanto instrumentos de observação e novas formas de registrar resultados ajudam a transformar a maneira de investigar o céu e a Terra. Em 1609, observações astronômicas com telescópios alimentam debates sobre os movimentos dos astros.\n\nEm um porto de intensa atividade, você encontra navegadores, comerciantes e estudiosos. Para ajudá-los, será necessário interpretar medidas, estimar velocidades e compreender por que observações repetidas são mais confiáveis do que uma impressão isolada.",
+    "objective": "Complete três desafios de matemática, observação e navegação para seguir viagem.",
+    "map_file": "moderna.png",
+    "intro_file": "intro_moderna.jpg",
+    "spawn": [
+      650,
+      670
+    ],
+    "npc_positions": [
+      [
+        295,
+        315
+      ],
+      [
+        650,
+        360
+      ],
+      [
+        900,
+        430
+      ]
+    ]
+  },
+  {
+    "key": "contemporanea",
+    "name": "Era Contemporânea",
+    "period": "séculos XVIII–XXI (cenário: industrialização)",
+    "introduction": "A Era Contemporânea começa em meio a revoluções políticas, transformações econômicas e mudanças profundas no trabalho e nas cidades. A industrialização amplia a produção e os transportes, mas também traz desafios: poluição, crescimento urbano acelerado, desigualdade e necessidade de infraestrutura. Ao longo dos séculos, avanços científicos e tecnológicos modificam a medicina, a comunicação e a organização da vida coletiva.\n\nVocê chega a uma cidade em transformação. Para colaborar com seus moradores, será preciso interpretar indicadores, calcular variações e avaliar o que os dados realmente permitem concluir. A última etapa reúne conhecimentos históricos e raciocínio crítico para encerrar sua viagem pelo tempo.",
+    "objective": "Resolva três desafios sobre dados, saúde pública, tecnologia e pensamento científico para concluir a jornada.",
+    "map_file": "contemporanea.png",
+    "intro_file": "intro_contemporanea.jpg",
+    "spawn": [
+      640,
+      665
+    ],
+    "npc_positions": [
+      [
+        425,
+        335
+      ],
+      [
+        650,
+        420
+      ],
+      [
+        920,
+        475
+      ]
+    ]
+  }
+]
