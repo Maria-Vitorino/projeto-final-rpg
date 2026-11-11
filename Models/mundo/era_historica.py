@@ -1,4 +1,4 @@
-"""Representa uma era histórica e seus recursos."""
+#Representa uma era histórica e seus recursos.
 
 from dataclasses import dataclass
 
