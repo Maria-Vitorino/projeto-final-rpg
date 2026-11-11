@@ -148,14 +148,10 @@ class ControladorJogo:
             dados.get("player_name", "Viajante")
         )[:20]
 
-        self.id_personagem = dados.get("character_id", "kassandra")
-
-        if self.id_personagem not in {
-            "kassandra",
-            "nikos",
-            "lyra",
-            "alexandros"
-        }:
+        id_salvo = dados.get("character_id", "kassandra")
+        if id_salvo in Jogador.PERSONAGENS_DISPONIVEIS:
+            self.id_personagem = id_salvo
+        else:
             self.id_personagem = "kassandra"
 
         era_restaurada = max(
@@ -282,7 +278,9 @@ class ControladorJogo:
             return
 
         if acao.startswith("choose:"):
-            self.id_personagem = acao.split(":", 1)[1]
+            id_escolhido = acao.split(":", 1)[1]
+            if id_escolhido in Jogador.PERSONAGENS_DISPONIVEIS:
+                self.id_personagem = id_escolhido
 
         elif acao == "quit":
             self.executando = False
@@ -303,6 +301,22 @@ class ControladorJogo:
             self.estado = "creditos"
 
         elif acao == "start_game":
+            # Valida o nome antes de iniciar a campanha, evitando que um
+            # ValueError no construtor de Jogador encerre o jogo.
+            nome_validado = self.nome_jogador.strip() or "Viajante"
+
+            try:
+                Jogador(
+                    nome_validado,
+                    self.id_personagem,
+                    *self.eras[0].posicao_inicial
+                )
+            except ValueError as erro:
+                self.feedback = str(erro)
+                return
+
+            self.nome_jogador = nome_validado
+            self.feedback = ""
             self.sessao.reiniciar()
             self.banco_perguntas.reiniciar_sorteio()
             self.estado = "introducao"
@@ -373,9 +387,11 @@ class ControladorJogo:
 
                 if evento.key == pygame.K_BACKSPACE:
                     self.nome_jogador = self.nome_jogador[:-1]
+                    self.feedback = ""
 
                 elif evento.key == pygame.K_RETURN:
                     self.nome_jogador = self.nome_jogador.strip() or "Viajante"
+                    self.feedback = ""
 
                 elif evento.key == pygame.K_ESCAPE:
                     self.estado = "menu"
@@ -392,6 +408,7 @@ class ControladorJogo:
             elif self.estado == "personagem":
                 if len(self.nome_jogador) + len(evento.text) <= 20:
                     self.nome_jogador += evento.text
+                    self.feedback = ""
 
         elif evento.type == pygame.KEYUP:
             self.teclas_pressionadas.discard(evento.key)
@@ -476,7 +493,8 @@ class ControladorJogo:
                 self.tela,
                 mouse,
                 self.id_personagem,
-                self.nome_jogador
+                self.nome_jogador,
+                self.feedback
             )
 
         elif self.estado == "historico":
