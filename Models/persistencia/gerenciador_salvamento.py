@@ -1,4 +1,4 @@
-"""Gerencia o salvamento e o carregamento do perfil e do progresso."""
+#Gerencia o salvamento e o carregamento do perfil e do progresso.
 
 import json
 from Controllers.caminhos import ARQUIVO_SALVAMENTO
