@@ -1,7 +1,7 @@
 """Centraliza os caminhos absolutos do projeto."""
 from pathlib import Path
 
-# caminhos.py fica em Controllers; parents[1] aponta para a raiz.
+# caminhos.py fica em Controllers; parents[1] aponta para a raiz
 PASTA_PROJETO = Path(__file__).resolve().parents[1]
 ASSETS_DIR = PASTA_PROJETO / "Views" / "assets"
 PASTA_BANCO_DADOS = PASTA_PROJETO / "Data"
