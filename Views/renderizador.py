@@ -425,7 +425,8 @@ class RenderizadorJogo:
         tela,
         mouse,
         selecionado,
-        nome_jogador
+        nome_jogador,
+        mensagem_erro=""
     ):
 
         self.botoes = []
@@ -591,6 +592,17 @@ class RenderizadorJogo:
             self.fonte_pequena,
             CREME
         )
+
+        if mensagem_erro:
+            self._desenhar_texto(
+                tela,
+                mensagem_erro,
+                640,
+                665,
+                self.fonte_pequena,
+                (255, 120, 120),
+                True
+            )
 
         iniciar = pygame.Rect(900, 580, 300, 52)
 
