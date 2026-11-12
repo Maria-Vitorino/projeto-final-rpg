@@ -303,7 +303,7 @@ class ControladorJogo:
         elif acao == "start_game":
             # Valida o nome antes de iniciar a campanha, evitando que um
             # ValueError no construtor de Jogador encerre o jogo.
-            nome_validado = self.nome_jogador.strip() or "Viajante"
+            nome_validado = self.nome_jogador
 
             try:
                 Jogador(
@@ -315,7 +315,7 @@ class ControladorJogo:
                 self.feedback = str(erro)
                 return
 
-            self.nome_jogador = nome_validado
+            self.nome_jogador = " ".join(nome_validado.split())
             self.feedback = ""
             self.sessao.reiniciar()
             self.banco_perguntas.reiniciar_sorteio()
@@ -390,7 +390,7 @@ class ControladorJogo:
                     self.feedback = ""
 
                 elif evento.key == pygame.K_RETURN:
-                    self.nome_jogador = self.nome_jogador.strip() or "Viajante"
+                    # A validação definitiva ocorre ao clicar em começar.
                     self.feedback = ""
 
                 elif evento.key == pygame.K_ESCAPE:
@@ -406,9 +406,20 @@ class ControladorJogo:
                     self.texto_digitado += evento.text
 
             elif self.estado == "personagem":
-                if len(self.nome_jogador) + len(evento.text) <= 20:
-                    self.nome_jogador += evento.text
+                texto_valido = "".join(
+                    caractere
+                    for caractere in evento.text
+                    if caractere.isalpha()
+                    or caractere.isspace()
+                    or caractere in "-'’"
+                )
+
+                if len(self.nome_jogador) + len(texto_valido) <= 20:
+                    self.nome_jogador += texto_valido
                     self.feedback = ""
+
+                if texto_valido != evento.text:
+                    self.feedback = "Use apenas letras para o nome do jogador."
 
         elif evento.type == pygame.KEYUP:
             self.teclas_pressionadas.discard(evento.key)
