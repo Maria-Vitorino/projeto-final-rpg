@@ -32,10 +32,7 @@ class ValidadorNumerico(ValidadorResposta):
 
             diferenca = abs(resposta - correta)
 
-            if diferenca <= tolerancia:
-                return True
-            else:
-                return False
+            return diferenca <= tolerancia
 
         except (ValueError, TypeError, KeyError):
             return False
@@ -60,7 +57,7 @@ class ValidadorTexto(ValidadorResposta):
                     encontrou = True
                     break
 
-            if encontrou == False:
+            if not encontrou:
                 return False
 
         return True
