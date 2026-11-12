@@ -126,10 +126,10 @@ class BancoPerguntas:
                 f"Não existem perguntas cadastradas para a era {chave_era!r}."
             )
 
-        perguntas_por_id = {}
-
-        for pergunta in perguntas:
-            perguntas_por_id[pergunta.id_pergunta] = pergunta
+        perguntas_por_id = {
+            pergunta.id_pergunta: pergunta
+            for pergunta in perguntas
+        }
 
         baralho = self._baralhos.setdefault(chave_era, [])
 
