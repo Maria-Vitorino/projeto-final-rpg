@@ -9,7 +9,7 @@ def normalizar_texto(texto):
     resultado = ""
 
     for caractere in texto:
-        if not unicodedata.combining(caractere):
+        if not unicodedata.combining(caractere) and not unicodedata.category(caractere).startswith("P"):
             resultado += caractere
 
     return resultado
