@@ -19,6 +19,30 @@ class Jogador(Personagem):
         self._olhando_direita = True
 
     @property
+    def nome(self):
+        """Retorna o nome validado do jogador."""
+        return super().nome
+
+    @nome.setter
+    def nome(self, novo_nome):
+        """Aceita nomes de pessoas, sem números, vazios ou o nome bloqueado."""
+        if not isinstance(novo_nome, str) or not novo_nome.strip():
+            raise ValueError("O nome do jogador não pode ficar vazio.")
+
+        nome_limpo = " ".join(novo_nome.split())
+        nome_normalizado = nome_limpo.casefold()
+
+        if nome_normalizado == "kanye west":
+            raise ValueError("Esse nome não está disponível. Escolha outro. 😄")
+
+        caracteres_permitidos = {" ", "-", "'", "’"}
+        if not all(caractere.isalpha() or caractere in caracteres_permitidos
+                   for caractere in nome_limpo):
+            raise ValueError("Use apenas letras para o nome do jogador.")
+
+        self._nome = nome_limpo
+
+    @property
     def id_personagem(self):
         """Retorna o identificador visual do personagem escolhido."""
         return self._id_personagem
