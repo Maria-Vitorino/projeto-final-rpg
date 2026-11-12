@@ -112,10 +112,7 @@ class BancoPerguntas:
 
         for era, perguntas in self._perguntas.items():
 
-            ids_perguntas = []
-
-            for pergunta in perguntas:
-                ids_perguntas.append(pergunta.id_pergunta)
+            ids_perguntas = [pergunta.id_pergunta for pergunta in perguntas]
 
             self._aleatorio.shuffle(ids_perguntas)
             self._baralhos[era] = ids_perguntas
