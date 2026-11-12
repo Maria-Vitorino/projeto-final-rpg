@@ -1,11 +1,13 @@
 class SessaoJogo:
 
     MAX_VIDAS = 3
+    NPCS_POR_ERA = 3
 
     def __init__(self):
         self.reiniciar()
 
     def reiniciar(self):
+        """Restaura os atributos para iniciar uma nova jornada."""
         self._indice_era = 0
         self._vidas = self.MAX_VIDAS
         self._pontuacao = 0
@@ -33,11 +35,10 @@ class SessaoJogo:
 
     @property
     def era_concluida(self):
-        return self.quantidade_concluida >= 3
+        return self.quantidade_concluida >= self.NPCS_POR_ERA
 
     def perder_vida(self):
-        if self._vidas > 0:
-            self._vidas -= 1
+        self._vidas = max(0, self._vidas - 1)
 
         return self._vidas == 0
 
