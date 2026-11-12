@@ -8,12 +8,14 @@ from Models.desafios.pergunta import Pergunta
 
 
 class BancoPerguntas:
+    """ Gerencia o armazenamento e o sorteio das perguntas do jogo. """
 
     def __init__(self, caminho_banco: Path, arquivo_inicial: Path | None = None, semente=None):
         self._caminho_banco = Path(caminho_banco)
         self._arquivo_inicial = Path(arquivo_inicial) if arquivo_inicial else None
         self._aleatorio = random.Random(semente)
 
+        # Armazena as perguntas, os baralhos de IDs e a última pergunta de cada era.
         self._perguntas = {}
         self._baralhos = {}
         self._ultima_por_era = {}
@@ -22,6 +24,9 @@ class BancoPerguntas:
         self._carregar_do_banco()
 
     def _conectar(self):
+        """Abre e configura uma conexão com o banco SQLite."""
+        
+        # Garante que a pasta do banco exista antes de estabelecer a conexão.
         self._caminho_banco.parent.mkdir(parents=True, exist_ok=True)
 
         conexao = sqlite3.connect(self._caminho_banco)
@@ -32,7 +37,8 @@ class BancoPerguntas:
     def _inicializar_banco(self):
 
         with self._conectar() as conexao:
-
+            
+            # Cria a tabela e um índice para facilitar consultas por era.
             conexao.execute(
                 """CREATE TABLE IF NOT EXISTS perguntas (
                     id TEXT PRIMARY KEY,
@@ -56,7 +62,8 @@ class BancoPerguntas:
                 )
 
                 linhas = []
-
+                
+                # Organiza os dados do JSON em registros para inserção no SQLite.
                 for era, perguntas in dados.items():
 
                     for pergunta in perguntas:
@@ -72,6 +79,7 @@ class BancoPerguntas:
                 )
 
     def _carregar_do_banco(self):
+        """Recupera as perguntas do SQLite e organiza os dados por era."""
 
         with self._conectar() as conexao:
 
@@ -86,7 +94,8 @@ class BancoPerguntas:
             perguntas_agrupadas.setdefault(era, []).append(
                 Pergunta(json.loads(conteudo))
             )
-
+            
+        # Verifica se todas as quatro eras possuem perguntas cadastradas.
         eras_necessarias = (
             "grecia",
             "medieval",
@@ -107,18 +116,21 @@ class BancoPerguntas:
     def reiniciar_sorteio(self):
         """Embaralha novamente as perguntas ao iniciar ou reiniciar uma jornada."""
 
+        # Limpa os baralhos e os registros anteriores para começar novos sorteios.
         self._baralhos = {}
         self._ultima_por_era = {}
 
         for era, perguntas in self._perguntas.items():
-
+            
+            # Cria uma lista com os IDs das perguntas e embaralha sua ordem.
             ids_perguntas = [pergunta.id_pergunta for pergunta in perguntas]
 
             self._aleatorio.shuffle(ids_perguntas)
             self._baralhos[era] = ids_perguntas
 
     def proxima_pergunta(self, chave_era: str, evitar_id: str | None = None) -> Pergunta:
-
+        """Sorteia e retorna uma pergunta da era solicitada."""
+        
         perguntas = self._perguntas.get(chave_era, [])
 
         if not perguntas:
@@ -137,6 +149,7 @@ class BancoPerguntas:
             baralho.extend(perguntas_por_id)
             self._aleatorio.shuffle(baralho)
 
+        # Identifica a pergunta que deve ser evitada para impedir repetição imediata.
         id_excluido = evitar_id or self._ultima_por_era.get(chave_era)
 
         if len(baralho) > 1 and baralho[-1] == id_excluido:
@@ -148,5 +161,8 @@ class BancoPerguntas:
 
         return perguntas_por_id[id_pergunta]
 
+    
     def contar_perguntas(self, chave_era: str) -> int:
+        """Retorna a quantidade de perguntas cadastradas em uma determinada era."""
+        
         return len(self._perguntas.get(chave_era, []))
