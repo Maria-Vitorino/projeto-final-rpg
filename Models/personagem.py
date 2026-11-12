@@ -22,11 +22,9 @@ class Personagem(ABC):
         if not isinstance(novo_nome, str) or not novo_nome.strip():
             raise ValueError("O nome não pode ser vazio.")
 
-        nome_normalizado = " ".join(novo_nome.split()).casefold()
-        if nome_normalizado == "kanye west":
-            raise ValueError("Esse nome não está disponível. Escolha outro. 😄")
-
-        self._nome = novo_nome.strip()
+        # A classe-base também representa NPCs, cujos nomes podem conter números.
+        # Regras específicas para nomes de jogadores ficam na classe Jogador.
+        self._nome = " ".join(novo_nome.split())
 
     @property
     def velocidade(self):
