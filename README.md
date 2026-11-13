@@ -28,7 +28,6 @@ A organização geral do projeto está dividida em módulos:
 - `Views/`: renderização das telas, mapas, personagens, botões e demais elementos visuais.
 - `Views/assets/`: imagens, mapas, fontes e demais recursos visuais.
 - `Data/`: banco SQLite, arquivo JSON de perguntas e esquema SQL.
-- `Tests/`: testes do sistema.
 
 Os caminhos de recursos, do banco de dados e do salvamento são centralizados em `Controllers/caminhos.py`.
 
